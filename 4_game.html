@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GAME | WASTE WISE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="2_front.html" class="logo-link">
+                <img src="gallery/logo.svg" alt="Logo">
+                <span class="ltext">WASTE <br>WISE</span>
+            </a>
+        </div>
+        <nav class="center" id="mainNav">
+            <ul>
+                <li><a href="2_front.html">Home</a></li>
+                <li><a href="3_know.html">About</a></li>
+                <li><a href="4_game.html" class="active">Game</a></li>
+                <li><a href="5_rrr.html">3R's</a></li>
+                <li><a href="6_quiz.html">Quiz</a></li>
+                <li><a href="7_feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+        <span class="points">🪙 <span id="pts">0</span> PTS</span>
+        <button class="btn-logout" id="logoutBtn">Log out</button>
+        </div>
+    </header>
+    <section class="intro" id="intro">
+  <div class="intro-card">
+    <div class="intro-icon">🗑️</div>
+    <h1>Ready to play?</h1>
+    <p class="intro-sub">Sort each item into the right bin before time runs out.</p>
+
+    <ul class="rules">
+      <li>10 items, 15 seconds each</li>
+      <li>Drag the item card into a bin, or tap a bin</li>
+      <li>+10 points for every correct answer</li>
+      <li>A wrong answer or timeout costs a life</li>
+      <li>You have 3 lives, so sort carefully</li>
+    </ul>
+
+    <p class="intro-points">Your points: <b id="introPts">0</b></p>
+    <button class="btn-start" id="startBtn" type="button">Start</button>
+  </div>
+</section>
+
+    <main class="game">
+    <section class="board" id="board" data-phase="play" hidden>
+    <div class="hud">
+      <div class="hud-title">
+        <h1>Where does it go?</h1>
+        <p id="roundText">Round 1 of 10</p>
+      </div>
+      <div class="hud-stats">
+        <div class="stat-pill">Score <b id="gScore">0</b></div>
+        <div class="stat-pill">Time <b id="gTime">0:15</b></div>
+        <div class="stat-pill">Streak <b id="gStreak">x0</b></div>
+        <div class="lives" id="lives"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="g-card" id="gCard">
+        <div class="g-photo" id="gPhoto"></div>
+        <h3 id="gName"></h3>
+      </div>
+
+      <p class="g-hint" id="gHint">Drag the item to the bin where it belongs.</p>
+
+      <div class="g-feedback" id="gFeedback" hidden>
+        <b class="fb-badge" id="fbBadge">+10</b>
+        <div class="fb-text">
+          <h3 id="fbTitle"></h3>
+          <p id="fbText"></p>
+        </div>
+        <button class="fb-next" id="nextBtn" type="button">Next item</button>
+      </div>
+    </div>
+
+    <div class="g-bins">
+      <button class="g-bin green" data-bin="bio" type="button">
+        <span class="g-lid"></span>
+        <span class="g-body"><b>Biodegradable</b><small>Food, plants</small></span>
+      </button>
+      <button class="g-bin blue" data-bin="rec" type="button">
+        <span class="g-lid"></span>
+        <span class="g-body"><b>Recyclable</b><small>Clean plastic, paper, glass</small></span>
+      </button>
+      <button class="g-bin gray" data-bin="non" type="button">
+        <span class="g-lid"></span>
+        <span class="g-body"><b>Non-recyclable</b><small>Wrappers, styrofoam</small></span>
+      </button>
+      <button class="g-bin red" data-bin="haz" type="button">
+        <span class="g-lid"></span>
+        <span class="g-body"><b>Hazardous</b><small>Batteries, bulbs</small></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="results" id="results" hidden>
+    <div class="results-card">
+      <div class="stars" id="stars"></div>
+      <h2 id="resTitle">Great sorting!</h2>
+      <p class="res-sub" id="resSub"></p>
+
+      <div class="res-stats">
+        <div><b id="resScore">0</b><span>Score</span></div>
+        <div><b id="resBest">x0</b><span>Best streak</span></div>
+        <div><b id="resEarned">+0</b><span>Points earned</span></div>
+      </div>
+
+      <div class="res-level">
+        <p id="resLevel"></p>
+        <div class="track"><i id="resBar"></i></div>
+        <p id="resMore"></p>
+      </div>
+
+      <div class="res-buttons">
+        <button class="btn-again" id="againBtn" type="button">Play again</button>
+        <a class="btn-quiz" href="6_quiz.html">Take the mini quiz</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>

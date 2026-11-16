@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>QUIZ | WASTE WISE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="2_front.html" class="logo-link">
+                <img src="gallery/logo.svg" alt="Logo">
+                <span class="ltext">WASTE <br>WISE</span>
+            </a>
+        </div>
+        <nav class="center" id="mainNav">
+            <ul>
+                <li><a href="2_front.html">Home</a></li>
+                <li><a href="3_know.html">About</a></li>
+                <li><a href="4_game.html">Game</a></li>
+                <li><a href="5_rrr.html">3R's</a></li>
+                <li><a href="6_quiz.html" class="active">Quiz</a></li>
+                <li><a href="7_feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+        <span class="points">🪙 <span id="pts">0</span> PTS</span>
+        <button class="btn-logout" id="logoutBtn">Log out</button>
+        </div>
+    </header>
+     <main class="quiz">
+    <section class="q-intro" id="qIntro">
+      <div class="q-intro-card">
+        <div class="q-intro-icon">📝</div>
+        <h1>Ready for the quiz?</h1>
+        <p class="q-intro-sub">Test what you learned about waste and sorting.</p>
+
+        <ul class="q-rules">
+          <li>10 multiple-choice questions</li>
+          <li>Questions come from Know Your Trash and the sorting game</li>
+          <li>7 points for every correct answer</li>
+          <li>You can earn up to 70 points</li>
+           <li>Your points are added to your total when you finish</li>
+        </ul>
+
+        <p class="q-intro-points">Your points: <b id="qIntroPts">0</b></p>
+        <button class="q-start" id="qStart" type="button">Start quiz</button>
+      </div>
+    </section>
+
+    <section class="q-card" id="qCard" hidden>
+      <div class="q-top">
+        <h1>Mini Quiz</h1>
+        <span id="qCount">Question 1 of 10</span>
+      </div>
+
+      <div class="q-bar"><i id="qBar"></i></div>
+
+      <div class="q-question">
+        <span class="q-topic" id="qTopic"></span>
+        <div class="q-photo" id="qPhoto"></div>
+        <h2 id="qText"></h2>
+        <p class="q-sub" id="qSub"></p>
+      </div>
+
+      <div class="q-options" id="qOptions"></div>
+
+      <div class="q-feedback" id="qFeedback" hidden>
+        <div class="q-fb-text">
+          <h3 id="qFbTitle"></h3>
+          <p id="qFbText"></p>
+        </div>
+        <button class="q-next" id="qNext" type="button">Next question</button>
+      </div>
+    </section>
+
+    <section class="q-results" id="qResults" hidden>
+      <div class="q-res-card">
+        <div class="rank-badge">
+          <small>RANK</small>
+          <b id="rankName">Seedling</b>
+        </div>
+        <h2>Quiz complete!</h2>
+        <p class="q-res-sub" id="qResSub"></p>
+
+        <div class="q-stats">
+          <div><b id="qScore">0</b><span>Quiz score</span></div>
+          <div><b id="qEarned">+0</b><span>Points earned</span></div>
+          <div><b id="qTotal">0</b><span>Total points</span></div>
+        </div>
+        <p class="q-added" id="qAdded"></p>
+        <div class="q-res-buttons">
+          <button class="q-again" id="qAgain" type="button">Try again</button>
+          <a class="q-rewards" href="2_front.html#prize"">View rewards</a>
+        </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+    <script src="script.js"></script>
+    <script src="quiz.js"></script>
+</body>

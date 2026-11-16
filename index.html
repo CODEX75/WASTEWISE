@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in | Waste Wise</title>
+  <link rel="stylesheet" href="login_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="login-wrap">
+  <div class="login-info">
+        <div class="logo">
+                <img src="gallery/logo.svg" alt="Logo">
+                <span>WASTE <br> WISE</span>
+        </div>
+    <span class="tag">LEARN. PLAY. RECYCLE.</span>
+    <h2>Welcome to Waste Wise</h2>
+    <p>Learn how to sort your trash, play the bin game, and earn points toward a chair made from recycled materials.</p>
+
+    <ul class="features">
+      <li>Learn the 4 waste types</li>
+      <li>Drag items into the right bin</li>
+      <li>Take the mini quiz and level up</li>
+    </ul>
+
+  </div><div class="login-card">
+
+  <!-- LOG IN FORM -->
+  <div id="loginForm">
+    <h1>Log in</h1>
+    <p class="m">Welcome back, eco warrior!</p>
+
+    <label for="user">Username</label>
+    <input id="user" type="text" placeholder="Username">
+
+    <label for="pass">Password</label>
+    <input id="pass" type="password" placeholder="Password">
+
+    <p id="error" class="error"></p>
+    <button id="loginBtn" class="btn">Log in</button>
+    <p class="switch">No account yet? <a href="#" id="toSignup">Create one</a></p>
+  </div>
+         <div id="signupForm" hidden>
+    <h1>Sign up</h1>
+    <p class="m">Join Waste Wise and start earning points!</p>
+
+    <label for="newUser">Username</label>
+    <input id="newUser" type="text" placeholder="Choose a username">
+
+    <label for="newPass">Password</label>
+    <input id="newPass" type="password" placeholder="At least 4 characters">
+
+    <label for="newPass2">Confirm password</label>
+    <input id="newPass2" type="password" placeholder="Type it again">
+
+    <p id="signupError" class="error"></p>
+    <button id="signupBtn" class="btn">Create account</button>
+    <p class="switch">Already have an account? <a href="#" id="toLogin">Log in</a></p>
+  </div>
+  </div>
+  <script src="login_script.js"></script>
+</body>
+</html>

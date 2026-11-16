@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ABOUT | WASTE WISE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="2_front.html" class="logo-link">
+                <img src="gallery/logo.svg" alt="Logo">
+                <span class="ltext">WASTE <br>WISE</span>
+            </a>
+        </div>
+        <nav class="center" id="mainNav">
+            <ul>
+                <li><a href="2_front.html">Home</a></li>
+                <li><a href="3_know.html" class="active">About</a></li>
+                <li><a href="4_game.html">Game</a></li>
+                <li><a href="5_rrr.html">3R's</a></li>
+                <li><a href="6_quiz.html">Quiz</a></li>
+                <li><a href="7_feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+        <span class="points">🪙 <span id="pts">0</span> PTS</span>
+        <button class="btn-logout" id="logoutBtn">Log out</button>
+        </div>
+    </header>
+<section class="page-head">
+  <span class="tag">LEARN</span>
+  <h1>Know Your Trash</h1>
+  <p>Every item belongs to a waste type. Learn the types, see what happens when waste is thrown away the wrong way, and find out how to manage it at home and at school.</p>
+</section>
+
+<section class="deck-area">
+  <div class="deck" id="deck"></div>
+  <div class="deck-actions">
+    <button class="btn-deck" id="shuffleBtn" type="button">Shuffle</button>
+    <button class="btn-deck alt" id="nextBtn" type="button">Next card</button>
+  </div>
+  <p class="deck-hint">Click the top card to open it. Click a card behind it to bring it to the front.</p>
+</section>
+
+<section class="block">
+  <h2>When waste is thrown away the wrong way</h2>
+  <p class="lead">Waste in the wrong place does not disappear. It spreads and harms land, water, air and living things.</p>
+
+  <div class="pollution">
+    <article class="poll-card">
+      <div class="pic"><img src="gallery/land.jpg" alt="land pollution" loading="lazy"></div>
+      <div class="poll-body">
+        <h3>Land pollution</h3>
+        <p>Trash dumped on roadsides, empty lots and overfilled dumpsites.</p>
+        <h4>Problems it can cause</h4>
+        <ul>
+          <li>Clogged drains that lead to flooding</li>
+          <li>Bad smells and pests that spread disease</li>
+          <li>Harmful liquid from rotting trash soaking into the soil</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="poll-card">
+      <div class="pic"><img src="gallery/river.jpg" alt="river pollution" loading="lazy"></div>
+      <div class="poll-body">
+        <h3>Water pollution</h3>
+        <p>Litter and waste washed into canals, rivers and lakes.</p>
+        <h4>Problems it can cause</h4>
+        <ul>
+          <li>Unsafe water for drinking and washing</li>
+          <li>Fish and other water life get sick or die</li>
+          <li>Blocked waterways that cause floods</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="poll-card">
+      <div class="pic"><img src="gallery/air.jpg" alt="air pollution" loading="lazy"></div>
+      <div class="poll-body">
+        <h3>Air pollution</h3>
+        <p>Smoke from burning trash and gases from rotting waste.</p>
+        <h4>Problems it can cause</h4>
+        <ul>
+          <li>Smoke that irritates the eyes, nose and lungs</li>
+          <li>Burning plastic releases harmful chemicals</li>
+          <li>Rotting waste gives off gases that warm the planet</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="poll-card">
+      <div class="pic"><img src="gallery/sea.jpg" alt="sea pollution" loading="lazy"></div>
+      <div class="poll-body">
+        <h3>Ocean pollution</h3>
+        <p>Plastic and trash that travels from the land into the sea.</p>
+        <h4>Problems it can cause</h4>
+        <ul>
+          <li>Turtles, birds and fish swallow plastic or get tangled in it</li>
+          <li>Tiny plastic pieces enter the food chain</li>
+          <li>Dirty beaches and damaged reefs</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to manage waste</h2>
+  <p class="lead">Small habits add up. Start with these where you live and study.</p>
+
+  <div class="tips">
+    <article class="tip-card">
+      <div class="tip-head home">At home</div>
+      <ul class="tip-list">
+        <li>Set up separate bins for biodegradable, recyclable, non-recyclable and hazardous waste.</li>
+        <li>Turn food scraps and dried leaves into compost.</li>
+        <li>Rinse and dry bottles and cans before you recycle them.</li>
+        <li>Bring a reusable bag and water bottle when you go out.</li>
+        <li>Keep old batteries and bulbs in a box until you can take them to a collection point.</li>
+        <li>Reuse jars, boxes and containers before you throw them away.</li>
+      </ul>
+    </article>
+
+    <article class="tip-card">
+      <div class="tip-head school">At school</div>
+      <ul class="tip-list">
+        <li>Label classroom bins by color so everyone knows where waste goes.</li>
+        <li>Use both sides of the paper and reuse notebooks with empty pages.</li>
+        <li>Bring a refillable water bottle and a lunch box instead of single-use wrappers.</li>
+        <li>Start a class compost pit or garden for leaves and fruit peels.</li>
+        <li>Collect old electronics and batteries for a drop-off day.</li>
+        <li>Pass on old books and uniforms instead of throwing them away.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<div class="cta">
+  <a class="btn-next" href="4_game.html">Next: Try the game</a>
+</div>
+
+<div class="zoom" id="zoom" hidden>
+  <div class="zoom-card" id="zoomCard" role="dialog" aria-modal="true">
+    <button class="zoom-close" id="zoomClose" type="button" aria-label="Close">X</button>
+    <div id="zoomBody"></div>
+  </div>
+</div>
+    <script src="script.js"></script>
+    <script src="know.js"></script>
+</body>
