@@ -91,6 +91,35 @@
     });
   }
 
+  function renderFeedback() {
+    let feedback = [];
+    try {
+      const saved = JSON.parse(localStorage.getItem("ww_feedback") || "[]");
+      if (Array.isArray(saved)) feedback = saved;
+    } catch (e) {}
+
+    const body = $("feedbackRows");
+    body.replaceChildren();
+    $("emptyFeedback").hidden = feedback.length > 0;
+
+    feedback.slice().reverse().forEach(item => {
+      const row = document.createElement("tr");
+      const values = [
+        item.user || "guest",
+        item.name || "—",
+        item.rating ? String(item.rating) + "/5" : "—",
+        item.message || "",
+        item.date ? new Date(item.date).toLocaleString() : "—"
+      ];
+      values.forEach(value => {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.append(cell);
+      });
+      body.append(row);
+    });
+  }
+
   $("resetAdmin").addEventListener("click", () => {
     if (!confirm("Reset admin points and claimed rewards to zero? Your login credentials will stay the same.")) return;
     localStorage.setItem(pointsKey(ADMIN), "0");
@@ -107,4 +136,5 @@
   });
 
   renderUsers();
+  renderFeedback();
 })();
