@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>3R'S | WASTE WISE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rrr.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,9 +20,9 @@
         <nav class="center" id="mainNav">
             <ul>
                 <li><a href="2_front.html">Home</a></li>
-                <li><a href="3_know.html">About</a></li>
+                <li><a href="3_know.html">Learn</a></li>
                 <li><a href="4_game.html">Game</a></li>
-                <li><a href="5_rrr.html"  class="active">3R's</a></li>
+                <li><a href="5_rrr.html" class="active">3R's</a></li>
                 <li><a href="6_quiz.html">Quiz</a></li>
                 <li><a href="7_feedback.html">Feedback</a></li>
             </ul>
@@ -31,5 +32,68 @@
         <button class="btn-logout" id="logoutBtn">Log out</button>
         </div>
     </header>
+
+    <main class="rr">
+
+      <div id="rrList">
+        <section class="page-head">
+          <span class="tag">STEP 3: CREATE</span>
+          <h1>Reduce, Reuse, Recycle</h1>
+          <p>Three habits that cut waste. Start with the easy tips, then make something new from things you would throw away.</p>
+        </section>
+
+        <section class="rr-wrap rr-rs">
+          <article class="rr-r" style="--c:#b8f5c4">
+            <div class="rr-r-top"><b class="rr-num">1</b><h2>Reduce</h2></div>
+            <p>Use less so there is less to throw away.</p>
+            <ul>
+              <li>Bring a tumbler and a reusable bag</li>
+              <li>Say no to single-use items</li>
+            </ul>
+          </article>
+
+          <article class="rr-r" style="--c:#ffd400">
+            <div class="rr-r-top"><b class="rr-num">2</b><h2>Reuse</h2></div>
+            <p>Give things a second life before they become trash.</p>
+            <ul>
+              <li>Turn jars into storage</li>
+              <li>Repair or pass on old clothes</li>
+            </ul>
+          </article>
+
+          <article class="rr-r" style="--c:#9fd3ff">
+            <div class="rr-r-top"><b class="rr-num">3</b><h2>Recycle</h2></div>
+            <p>Turn clean materials into new products.</p>
+            <ul>
+              <li>Rinse and dry before sorting</li>
+              <li>Check your local bin rules</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="rr-wrap rr-diy-head">
+          <div>
+            <h2>DIY recycled ideas</h2>
+            <p>Pick a project, watch the video, and follow the steps.</p>
+          </div>
+          <div class="rr-filters" role="group" aria-label="Filter by difficulty">
+            <button class="rr-filter" type="button" data-level="all" aria-pressed="true">All</button>
+            <button class="rr-filter" type="button" data-level="easy" aria-pressed="false">Easy</button>
+            <button class="rr-filter" type="button" data-level="medium" aria-pressed="false">Medium</button>
+            <button class="rr-filter" type="button" data-level="hard" aria-pressed="false">Hard</button>
+          </div>
+        </section>
+
+        <section class="rr-wrap">
+          <div class="rr-grid" id="rrGrid"></div>
+        </section>
+      </div>
+
+      <div id="rrDetail" hidden></div>
+
+    </main>
+
     <script src="script.js"></script>
+    <script src="rrr.js"></script>
 </body>
+</html>
