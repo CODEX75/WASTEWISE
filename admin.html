@@ -55,6 +55,17 @@
       </div>
       <p class="admin-note" id="emptyUsers" hidden>No player accounts found.</p>
     </section>
+    <section class="admin-panel">
+      <h2>Submitted feedback</h2>
+      <p class="admin-note">Feedback saved on this browser appears here for the demo.</p>
+      <div style="overflow-x:auto">
+        <table class="admin-table">
+          <thead><tr><th>User</th><th>Name</th><th>Rating</th><th>Message</th><th>Date</th></tr></thead>
+          <tbody id="feedbackRows"></tbody>
+        </table>
+      </div>
+      <p class="admin-note" id="emptyFeedback" hidden>No feedback has been submitted on this browser.</p>
+    </section>
     <p class="admin-note">Demo limitation: this dashboard uses browser localStorage. Changes are saved in this browser only and are not secure against users who edit browser storage.</p>
   </main>
   <script src="admin.js"></script>
