@@ -240,28 +240,6 @@
       : "No points this time. Try again to earn some!";
   }
 
-  function finish() {
-    const earned = Q.score * POINTS_PER_CORRECT;
-
-    if (!Q.added) {
-      Q.added = true;
-      if (earned > 0) addPoints(earned);
-    }
-
-    const total = getPoints();
-
-    card.hidden = true;
-    resultsBox.hidden = false;
-    el("qResSub").textContent = "You answered " + Q.score + " of " + TOTAL + " correctly.";
-    el("qScore").textContent = earned;
-    el("qEarned").textContent = "+" + earned;
-    el("qTotal").textContent = total;
-    el("rankName").textContent = rankFor(total);
-    el("qAdded").textContent = earned > 0
-      ? earned + " points were added to your total."
-      : "No points this time. Try again to earn some!";
-  }
-
   function claim() {
     if (!Q || Q.claimed) return;
     const earned = Q.score * POINTS_PER_CORRECT;
