@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard | WasteWise</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    .admin-wrap{width:min(1100px,92%);margin:48px auto}
+    .admin-panel{background:#fff;border:3px solid #222;border-radius:16px;padding:24px;margin:20px 0;box-shadow:6px 6px 0 #222}
+    .admin-panel h2{font-family:'Press Start 2P',cursive;font-size:15px;line-height:1.7}
+    .admin-note{font-family:'VT323',monospace;font-size:21px}
+    .admin-table{width:100%;border-collapse:collapse;margin-top:16px}
+    .admin-table th,.admin-table td{padding:12px;border-bottom:1px solid #ddd;text-align:left}
+    .admin-table input{max-width:130px;padding:8px}
+    .admin-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .admin-btn{border:2px solid #222;border-radius:8px;padding:9px 14px;cursor:pointer;font-weight:bold;background:#f4d35e;color:#222;text-decoration:none}
+    .admin-btn.danger{background:#ef767a}
+    .admin-status{min-height:24px;font-weight:bold}
+    @media(max-width:650px){.admin-panel{padding:14px;overflow-x:auto}.admin-table{min-width:540px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="admin.html" class="logo-link"><img src="gallery/logo.svg" alt="WasteWise Logo"><span class="ltext">WASTE<br>WISE</span></a></div>
+    <div class="nav-right"><span class="points">ADMIN DASHBOARD</span><button class="btn-logout" id="adminLogout">Log out</button></div>
+  </header>
+  <main class="admin-wrap">
+    <span class="tag">DEMO CONTROL PANEL</span>
+    <h1>Admin Dashboard</h1>
+    <p class="admin-note">Manage player scores and reset demo progress.</p>
+    <section class="admin-panel">
+      <h2>Admin account reset</h2>
+      <p class="admin-note">Reset admin points and claimed rewards. Your admin username and password stay the same.</p>
+      <div class="admin-actions">
+        <button class="admin-btn danger" id="resetAdmin" type="button">Reset admin points and rewards</button>
+        <a class="admin-btn" href="2_front.html">Open WasteWise website</a>
+      </div>
+      <p class="admin-status" id="adminStatus" role="status"></p>
+    </section>
+    <section class="admin-panel">
+      <h2>Player score manager</h2>
+      <p class="admin-note">Edit a player's total points. Resetting a player's score also resets their claimed-reward count.</p>
+      <div class="admin-actions">
+        <input id="userSearch" type="search" placeholder="Search username" aria-label="Search username">
+        <button class="admin-btn" id="refreshUsers" type="button">Refresh list</button>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="admin-table">
+          <thead><tr><th>Username</th><th>Current points</th><th>New points</th><th>Claimed rewards</th><th>Actions</th></tr></thead>
+          <tbody id="userRows"></tbody>
+        </table>
+      </div>
+      <p class="admin-note" id="emptyUsers" hidden>No player accounts found.</p>
+    </section>
+    <p class="admin-note">Demo limitation: this dashboard uses browser localStorage. Changes are saved in this browser only and are not secure against users who edit browser storage.</p>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
