@@ -62,33 +62,37 @@ document.addEventListener('click', e => {
   }
 });
 
-const REWARD_TARGET = 500;
+const REWARD_TARGET = 1000;
 
-function claimedKey(){
-  return 'ww_claimed_' + (localStorage.getItem('ww_user') || 'guest');
+function claimsKey(){
+  return 'ww_claims_' + (localStorage.getItem('ww_user') || 'guest');
+}
+
+function getClaims(){
+  return Number(localStorage.getItem(claimsKey())) || 0;
 }
 
 function renderReward(){
   const pts = getPoints();
-  const claimed = localStorage.getItem(claimedKey()) === '1';
-  const unlocked = pts >= REWARD_TARGET;
+  const claims = getClaims();
+  const nextTarget = (claims + 1) * REWARD_TARGET;
+  const unlocked = pts >= nextTarget;
 
   document.getElementById('chairBox').classList.toggle('unlocked', unlocked);
-  document.getElementById('rewardBar').style.width = Math.min(100, pts / REWARD_TARGET * 100) + '%';
+
+  const progress = Math.max(0, Math.min(100, (pts - claims * REWARD_TARGET) / REWARD_TARGET * 100));
+  document.getElementById('rewardBar').style.width = progress + '%';
 
   const info = document.getElementById('rewardInfo');
   const btn = document.getElementById('claimBtn');
+  const claimedText = claims > 0 ? 'Rewards claimed: ' + claims + '. ' : '';
 
-  if (claimed){
-    info.textContent = 'Reward claimed. Thank you for saving the planet!';
-    btn.textContent = 'Claimed';
-    btn.disabled = true;
-  } else if (unlocked){
-    info.textContent = 'You reached ' + REWARD_TARGET + ' points. Your reward is unlocked!';
+  if (unlocked){
+    info.textContent = claimedText + 'You reached ' + nextTarget + ' points. Your reward is unlocked!';
     btn.textContent = 'Claim reward';
     btn.disabled = false;
   } else {
-    info.textContent = (REWARD_TARGET - pts) + ' more points to unlock (' + pts + ' / ' + REWARD_TARGET + ')';
+    info.textContent = claimedText + (nextTarget - pts) + ' more points to unlock (' + pts + ' / ' + nextTarget + ')';
     btn.textContent = 'Locked';
     btn.disabled = true;
   }
@@ -152,8 +156,8 @@ if (rewardModal){
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReward(); });
 
   claimBtn.addEventListener('click', () => {
-    if (getPoints() < REWARD_TARGET) return;
-    localStorage.setItem(claimedKey(), '1');
+    if (getPoints() < (getClaims() + 1) * REWARD_TARGET) return;
+    localStorage.setItem(claimsKey(), getClaims() + 1);
     renderReward();
   });
 }
